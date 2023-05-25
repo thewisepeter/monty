@@ -7,10 +7,10 @@
  *
  * Return: nothing
  */
-void f_push(stak_t **head, unsigned int line_number)
+void f_push(stack_t **head, unsigned int line_number)
 {
 	int n, i = 0, flag = 0;
-	stak_t *new_node, *temp;
+	stack_t *new_node, *temp;
 
 	if (!bus.arg)
 	{
@@ -32,7 +32,7 @@ void f_push(stak_t **head, unsigned int line_number)
 	}
 	n = atoi(bus.arg);
 	temp = (*head);
-	new_node = malloc(sizeof(stak_t));
+	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");

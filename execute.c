@@ -9,7 +9,7 @@
  *
  * Return: 0 (success)
  */
-int execute(char *data, stak_t **top, unsigned int line_number, FILE *fp)
+int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
 {
 	unsigned int i = 0;
 	char *op;

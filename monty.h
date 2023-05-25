@@ -19,7 +19,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-} stak_t;
+} stack_t;
 
 
 /**
@@ -33,7 +33,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stak_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
@@ -51,7 +51,7 @@ typedef struct bus_s
 	char *data;
 } bus_t;
 extern bus_t bus;
-void f_push(stak_t **head, unsigned int line_number);
-int execute(char *data, stak_t **top, unsigned int line_number, FILE *fp);
+void f_push(stack_t **head, unsigned int line_number);
+int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp);
 
 #endif /* _LISTS_H_ */
