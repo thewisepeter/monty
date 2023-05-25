@@ -28,6 +28,15 @@ void f_div(stack_t **head, unsigned int line_number)
 	}
 
 	temp = *head;
+	if (temp->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		fclose(bus.file);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *head;
 	div = temp->next->n / temp->n;
 	temp->next->n = div;
 

@@ -43,7 +43,7 @@ typedef struct instruction_s
  * @arg: argument to functions
  * @data: string from file
  *
- * Description: this helps to move variables across the 
+ * Description: this helps to move variables across the
  * program
  */
 typedef struct bus_s
