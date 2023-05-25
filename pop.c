@@ -11,7 +11,7 @@ void f_pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (head)
+	if (*head)
 	{
 		temp = *head;
 		*head = temp->next;
