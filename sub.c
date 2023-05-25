@@ -21,7 +21,7 @@ void f_sub(stack_t **head, unsigned int line_number)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		fclose(bus.file);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
