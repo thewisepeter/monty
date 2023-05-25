@@ -20,7 +20,7 @@ int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
 	printf("in execute func op is %s\n", op);
 	bus.arg = strtok(NULL, " \n\t");
 	printf("in exec func arg is %s\n", bus.arg);
-	
+
 	if (strcmp(op, operations[i].opcode) == 0)
 	{
 		operations[i].f(top, line_number);

@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * push - add to the stack
+ * f_push - add to the stack
  * @head: stack
  * @line_number: line number
  *
@@ -10,7 +10,6 @@
 void f_push(stack_t **head, unsigned int line_number)
 {
 	int n, i = 0, flag = 0;
-	stack_t *new_node, *temp;
 
 	if (!bus.arg)
 	{
@@ -21,7 +20,7 @@ void f_push(stack_t **head, unsigned int line_number)
 	}
 	else
 	{
-		for(; bus.arg[i] != '\0'; i++)
+		for (; bus.arg[i] != '\0'; i++)
 		{
 			if (bus.arg[i] > 57 || bus.arg[i] < 48)
 				flag = 1;
@@ -35,19 +34,5 @@ void f_push(stack_t **head, unsigned int line_number)
 		}
 	}
 	n = atoi(bus.arg);
-	temp = (*head);
-	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-
-	if (temp)
-		temp->prev = new_node;
-	new_node->n = n;
-	printf("in push n is %d\n", new_node->n);
-	new_node->next = *head;
-	new_node->prev = NULL;
-	*head = new_node;
+	add_node(head, n);
 }
