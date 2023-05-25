@@ -15,6 +15,8 @@ void f_push(stack_t **head, unsigned int line_number)
 	if (!bus.arg)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(bus.file);
+		free(bus.data);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -27,6 +29,8 @@ void f_push(stack_t **head, unsigned int line_number)
 		if (flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fclose(bus.file);
+			free(bus.data);
 			exit(EXIT_FAILURE);
 		}
 	}
