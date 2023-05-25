@@ -9,14 +9,17 @@
  *
  * Return: 0 (success)
  */
-int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
+int execute(char *data, stak_t **top, unsigned int line_number, FILE *fp)
 {
 	unsigned int i = 0;
 	char *op;
 	instruction_t operations[] = {{"push", f_push}, {NULL, NULL}};
 
+	printf("in execute func data is %s\n", data);
 	op = strtok(data, " \n\t");
+	printf("in execute func op is %s\n", op);
 	bus.arg = strtok(NULL, " \n\t");
+	printf("in exec func arg is %s\n", bus.arg);
 	
 	if (strcmp(op, operations[i].opcode) == 0)
 	{

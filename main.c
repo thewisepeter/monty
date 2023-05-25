@@ -1,8 +1,7 @@
 #include "monty.h"
+#define MAX_LEN 1024
 
-#define MAX_LINE_LENGTH 1024
 bus_t bus = {NULL, NULL, NULL};
-
 /**
  * main - monty
  * @argc: number of arguments
@@ -13,10 +12,10 @@ bus_t bus = {NULL, NULL, NULL};
 int main(int argc, char *argv[])
 {
 	FILE *fp;
-	stack_t *top = NULL;
+	ssize_t nchars_read = 1;
+	stak_t *top = NULL;
 	unsigned int line_number = 0;
-	char data[MAX_LINE_LENGTH];
-	int i;
+	char data[MAX_LEN];
 
 	if (argc != 2)
 	{
@@ -32,17 +31,14 @@ int main(int argc, char *argv[])
 	}
 	bus.file = fp;
 
-	while (fgets(data, MAX_LINE_LENGTH, fp) != NULL)
-	{
-		i = 0;
-		line_number++;
+	fgets(data, MAX_LEN, fp);
+	bus.data = data;
+	printf("%s", bus.data);
+	line_number++;
 
-		while (data[i] != '\n' && data[i] != '\0')
-		{
-			execute(data, &top, line_number, fp);
-			i++;
-		}
-	}
+		
+	execute(bus.data, &top, line_number, fp);
+
 	fclose(fp);
 
 	return (0);
