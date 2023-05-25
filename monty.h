@@ -54,5 +54,6 @@ extern bus_t bus;
 void f_push(stack_t **head, unsigned int line_number);
 int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp);
 void add_node(stack_t **head, int n);
+void f_pall(stack_t **head, unsigned int line_number);
 
 #endif /* _LISTS_H_ */

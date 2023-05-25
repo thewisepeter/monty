@@ -13,7 +13,7 @@ int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
 {
 	unsigned int i = 0;
 	char *op;
-	instruction_t operations[] = {{"push", f_push}, {NULL, NULL}};
+	instruction_t operations[] = {{"push", f_push}, {"pall", f_pall}, {NULL, NULL}};
 
 	printf("in execute func data is %s\n", data);
 	op = strtok(data, " \n\t");
