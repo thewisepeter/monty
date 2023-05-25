@@ -1,9 +1,16 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -52,5 +59,6 @@ typedef struct bus_s
 } bus_t;
 extern bus_t bus;
 void f_push(stack_t **head, unsigned int line_number);
+int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp);
 
 #endif /* _LISTS_H_ */

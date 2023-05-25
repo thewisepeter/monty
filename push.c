@@ -10,7 +10,7 @@
 void f_push(stack_t **head, unsigned int line_number)
 {
 	int n, i = 0, flag = 0;
-	stack_t *new_node, temp;
+	stack_t *new_node, *temp;
 
 	if (!bus.arg)
 	{
@@ -27,7 +27,7 @@ void f_push(stack_t **head, unsigned int line_number)
 		if (flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE)
+			exit(EXIT_FAILURE);
 		}
 	}
 	n = atoi(bus.arg);

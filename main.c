@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		line_number++;
 		if (nchars_read > 0)
 		{
-			/* functions come in here */
+			execute(data, &top, line_number, fp);
 		}
 	}
 	fclose(fp);
