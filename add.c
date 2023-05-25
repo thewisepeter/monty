@@ -29,8 +29,7 @@ void f_add(stack_t **head, unsigned int line_number)
 	temp = *head;
 	sum = temp->n + temp->next->n;
 	temp->next->n = sum;
-	
-	temp->next = temp->next->next;
-	if (temp->next)
-		temp->next->prev = temp;
+
+	*head = temp->next;
+	free(temp);
 }
