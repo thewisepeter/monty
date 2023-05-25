@@ -30,13 +30,12 @@ int main(int argc, char *argv[])
 	}
 	bus.file = fp;
 
-	fgets(data, MAX_LEN, fp);
-	bus.data = data;
-	printf("%s", bus.data);
-	line_number++;
-
-		
-	execute(bus.data, &top, line_number, fp);
+	while (fgets(data, MAX_LEN, fp) != NULL)
+	{
+		line_number++;
+		bus.data = data;
+		execute(bus.data, &top, line_number, fp);
+	}
 
 	fclose(fp);
 
