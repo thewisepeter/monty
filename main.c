@@ -1,6 +1,6 @@
 #include "monty.h"
 
-bus_t bus = {NULL, NULL, NULL, 0};
+bus_t bus = {NULL, NULL, NULL};
 /**
  * main - monty
  * @argc: number of arguments
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 			/* functions come in here */
 		}
 	}
-	fclose(file);
+	fclose(fp);
 
 	return (0);
 }

@@ -37,10 +37,12 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
+ * struct bus_t - carries vriables around
+ * @arg: argument to functions
+ * @data: string from file
  *
- *
- *
- *
+ * Description: this helps to move variables across the 
+ * program
  */
 typedef struct bus_s
 {
@@ -49,6 +51,6 @@ typedef struct bus_s
 	char *data;
 } bus_t;
 extern bus_t bus;
-
+void f_push(stack_t **head, unsigned int line_number);
 
 #endif /* _LISTS_H_ */
