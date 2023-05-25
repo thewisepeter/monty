@@ -1,6 +1,7 @@
 #include "monty.h"
 #define MAX_LEN 1024
 
+bus_t bus = {NULL, NULL, NULL};
 /**
  * main - monty
  * @argc: number of arguments
@@ -14,7 +15,6 @@ int main(int argc, char *argv[])
 	stack_t *top = NULL;
 	unsigned int line_number = 0;
 	char data[MAX_LEN];
-	bus_t bus = {NULL, NULL, NULL};
 
 	if (argc != 2)
 	{
