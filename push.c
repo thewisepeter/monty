@@ -9,7 +9,7 @@
  */
 void f_push(stack_t **head, unsigned int line_number)
 {
-	int n, i = 0, flag = 0;
+	int n, i = 0; 
 
 	if (!bus.arg)
 	{
@@ -25,15 +25,13 @@ void f_push(stack_t **head, unsigned int line_number)
 	
 		for (; bus.arg[i] != '\0'; i++)
 		{
-			if (bus.arg[i] > 57 || bus.arg[i] < 48)
-				flag = 1;
-		}
-		if (flag == 1)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			fclose(bus.file);
-			free_stack(*head);
-			exit(EXIT_FAILURE);
+			if (!isdigit(bus.arg[i]))
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				fclose(bus.file);
+				free_stack(*head);
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
 	n = atoi(bus.arg);
