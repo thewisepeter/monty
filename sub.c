@@ -2,7 +2,7 @@
 
 /**
  * f_sub - subtracts the top element of the stack from
- * the second top element of the stack 
+ * the second top element of the stack
  * @head: stack
  * @line_number: line number
  *
@@ -26,7 +26,7 @@ void f_sub(stack_t **head, unsigned int line_number)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	temp = *head;
 	dif = temp->next->n - temp->n;
 	temp->next->n = dif;
