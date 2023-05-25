@@ -12,7 +12,6 @@ bus_t bus = {NULL, NULL, NULL};
 int main(int argc, char *argv[])
 {
 	FILE *fp;
-	ssize_t nchars_read = 1;
 	stak_t *top = NULL;
 	unsigned int line_number = 0;
 	char data[MAX_LEN];
