@@ -20,6 +20,9 @@ void f_push(stack_t **head, unsigned int line_number)
 	}
 	else
 	{
+		if (bus.arg[0] == '-')
+			i++;
+	
 		for (; bus.arg[i] != '\0'; i++)
 		{
 			if (bus.arg[i] > 57 || bus.arg[i] < 48)
