@@ -32,8 +32,13 @@ int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
-	fclose(fp);
-	free_stack(*top);
-	exit(EXIT_FAILURE);
+
+	if (op || operations[i].opcode == NULL)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
+		fclose(fp);
+		free_stack(*top);
+		exit(EXIT_FAILURE);
+	}
+	return (1);
 }
