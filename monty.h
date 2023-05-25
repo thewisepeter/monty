@@ -57,5 +57,6 @@ void add_node(stack_t **head, int n);
 void f_pall(stack_t **head, unsigned int line_number);
 void free_stack(stack_t *top);
 void f_pint(stack_t **head, unsigned int line_number);
+void f_pop(stack_t **head, unsigned int line_number);
 
 #endif /* _LISTS_H_ */
