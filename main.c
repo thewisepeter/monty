@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		bus.data = data;
 		execute(bus.data, &top, line_number, fp);
 	}
-
+	free_stack(top);
 	fclose(fp);
 
 	return (0);
