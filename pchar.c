@@ -9,7 +9,7 @@
  */
 void f_pchar(stack_t **head, unsigned int line_number)
 {
-	stack_t temp;
+	stack_t *temp;
 
 	temp = *head;
 	if (!temp)
