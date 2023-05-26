@@ -20,7 +20,7 @@ int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
 		{"sub", f_sub}, {"div", f_div},
 		{"mul", f_mul}, {"mod", f_mod},
 		{"pchar", f_pchar}, {"pstr", f_pstr},
-		{"rotl", f_rotl},
+		{"rotl", f_rotl}, {"rotr", f_rotr},
 		{NULL, NULL}};
 
 	op = strtok(data, " \n\t");
