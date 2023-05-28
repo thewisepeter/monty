@@ -1,7 +1,7 @@
 #include "monty.h"
 #define MAX_LEN 1024
 
-bus_t bus = {NULL, NULL, NULL};
+bus_t bus = {NULL, NULL, NULL, 0};
 /**
  * main - monty
  * @argc: number of arguments
