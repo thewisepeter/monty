@@ -43,6 +43,7 @@ typedef struct instruction_s
  * @arg: argument to functions
  * @data: string from file
  * @file: file descriptor
+ * @st_or_que: determines if implementation is LIFO or FIFO
  *
  * Description: this helps to move variables across the
  * program
@@ -52,11 +53,12 @@ typedef struct bus_s
 	char *arg;
 	FILE *file;
 	char *data;
+	int st_or_que;
 } bus_t;
 extern bus_t bus;
 void f_push(stack_t **head, unsigned int line_number);
 int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp);
-void add_node(stack_t **head, int n);
+void add_node_stack(stack_t **head, int n);
 void f_pall(stack_t **head, unsigned int line_number);
 void free_stack(stack_t *top);
 void f_pint(stack_t **head, unsigned int line_number);
@@ -72,5 +74,8 @@ void f_pchar(stack_t **head, unsigned int line_number);
 void f_pstr(stack_t **head, unsigned int line_number);
 void f_rotl(stack_t **head, unsigned int line_number);
 void f_rotr(stack_t **head, unsigned int line_number);
+void f_stack(stack_t **head, unsigned int line_number);
+void f_queue(stack_t **head, unsigned int line_number);
+void add_node_queue(stack_t **head, int n);
 
 #endif /* _LISTS_H_ */
