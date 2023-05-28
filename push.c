@@ -35,5 +35,8 @@ void f_push(stack_t **head, unsigned int line_number)
 		}
 	}
 	n = atoi(bus.arg);
-	add_node(head, n);
+	if (bus.st_or_que == 0)
+		add_node_stack(head, n);
+	else
+		add_node_queue(head, n);
 }
