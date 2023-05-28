@@ -26,7 +26,7 @@ int execute(char *data, stack_t **top, unsigned int line_number, FILE *fp)
 	op = strtok(data, " \n\t");
 	bus.arg = strtok(NULL, " \n\t");
 
-	if (op && op[0] == '#')
+	if (op == NULL || op[0] == '#')
 		return (0);
 
 	while (operations[i].opcode != NULL)
