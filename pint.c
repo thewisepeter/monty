@@ -4,11 +4,9 @@
  * f_pint - prints the value at the top of the stack
  *
  * @head: stack
- * @line_number: line number 
+ * @line_number: line number
  *
- *
- *
- *
+ * Return: nothing
  */
 void f_pint(stack_t **head, unsigned int line_number)
 {

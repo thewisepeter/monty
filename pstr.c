@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * f_ptr - prints the string at the top of the stack
+ * f_pstr - prints the string at the top of the stack
  * @head: stack
  * @line_number: line number
  *
@@ -15,7 +15,7 @@ void f_pstr(stack_t **head, unsigned int line_number)
 	temp = *head;
 	while (temp)
 	{
-		if (temp->n > 127 || temp->n <=0)
+		if (temp->n > 127 || temp->n <= 0)
 		{
 			break;
 		}

@@ -39,9 +39,10 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct bus_t - carries vriables around
+ * struct bus_s - carries vriables around
  * @arg: argument to functions
  * @data: string from file
+ * @file: file descriptor
  *
  * Description: this helps to move variables across the
  * program
